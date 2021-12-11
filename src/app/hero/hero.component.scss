@@ -1,0 +1,413 @@
+@import "../../fonts";
+
+@mixin header_children_position{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+@mixin header_p{
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -.5px;
+  opacity: .5;
+  color: $colorWhite;
+  font-family: ProximaNova-Regular, Arial, sans-serif;
+}
+
+@mixin click_hover{
+  transform: scale(1.1);
+  box-shadow: 2px 2px 3px #000000;
+  cursor: pointer;
+}
+@mixin click_active{
+  transform: scale(.9);
+  box-shadow: none;
+}
+
+$colorWhite: #FFFFFF;
+$colorGold: #FEE040;
+$center: center;
+$anotherFontFam: Arial, sans-serif;
+
+.container_hero{
+  width: 100%;
+  height: 762px;
+  background: url("../../assets/images/bg.jpg") $center $center no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 100px)) 1fr;
+  grid-column-gap: 20px;
+  grid-template-rows: 206px;
+  header{
+    width: 100%;
+    height: 80px;
+    grid-column: 2/14;
+    position: relative;
+    .burger{
+      width: 40px;
+      height: 22px;
+      left: .4%;
+      cursor: pointer;
+      @include header_children_position;
+    }
+    .logo{
+      width: 197px;
+      height: 30px;
+      background: url("../../assets/images/logo.png") $center $center no-repeat;
+      background-size: cover;
+      left: 8.8%;
+      @include header_children_position;
+    }
+    .email{
+      width: 131px;
+      height: 31px;
+      right: 23.3%;
+      display: flex;
+      flex-direction: column;
+      @include header_children_position;
+      .email_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 5px;
+        .envelope{
+        }
+        .email_link{
+          margin-right: 3px;
+          a{
+            @include header_p;
+            font-size: 14px;
+            color: $colorGold;
+          }
+        }
+      }
+      p{
+        @include header_p;
+      }
+    }
+    .number{
+      width: 188px;
+      height: 44px;
+      right: 0.3%;
+      display: flex;
+      flex-direction: column;
+      @include header_children_position;
+      .phone_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        .handset{
+          opacity: .5;
+          padding-right: 8px;
+        }
+        p{
+          @include header_p;
+          margin-right: 3px;
+          padding-top: 1px;
+        }
+      }
+      .phone{
+        font-family: ProximaNova-Bold, $anotherFontFam;
+        font-size: 20px;
+        line-height: 24px;
+        color: $colorWhite;
+      }
+    }
+  }
+  article{
+    width: 100%;
+    height: auto;
+    grid-column: 2/14;
+    display: grid;
+    grid-template-columns: 1fr repeat(10, minmax(auto, 100px)) 1fr;
+    grid-column-gap: 20px;
+    .proposal_header{
+      height: 209px;
+      grid-column: 2/7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .main_text{
+        font-family: Gilroy-Extrabold, $anotherFontFam;
+        font-size: 42px;
+        line-height: 51px;
+        letter-spacing: -.9px;
+        color: $colorWhite;
+      }
+      p{
+        font-family: ProximaNova-Regular, $anotherFontFam;
+        font-size: 20px;
+        line-height: 34px;
+        color: $colorWhite;
+        opacity: .7;
+        max-width: 365px;
+        margin-bottom: 6px;
+      }
+    }
+    .proposal_button{
+      height: 209px;
+      grid-column: 9/12;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      button{
+        height: 70px;
+        border: none;
+        background-color: $colorGold;
+        border-radius: 2px;
+        margin: 1px 0 0 4px;
+        position: relative;
+        &:hover{
+          @include click_hover;
+        }
+        &:active{
+          @include click_active;
+        }
+        .proposal_btn_img{
+          position: absolute;
+          top: 30px;
+          left: 57px;
+        }
+        .proposal_btn_text{
+          font-family: Gilroy-Bold, $anotherFontFam;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #000;
+          position: absolute;
+          top: 30px;
+          right: 55px;
+        }
+      }
+      p{
+        font-family: ProximaNova-Regular, $anotherFontFam;
+        font-size: 15px;
+        line-height: 28px;
+        color: $colorWhite;
+        margin-top: 15px;
+      }
+    }
+    .qualities{
+      grid-column: span 12;
+      height: 228px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .first, .second, .third{
+        height: 56px;
+        display: flex;
+        flex-direction: row;
+        align-items: $center;
+        justify-content: space-between;
+        padding-bottom: 7px;
+        p{
+          font-family: ProximaNova-Regular, $anotherFontFam;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: -.4px;
+          color: $colorWhite;
+        }
+        .num{
+          width: 50px;
+          height: 47px;
+        }
+      }
+      .first{
+        width: 260px;
+        p{
+          width: 180px;
+          padding-left: 7px;
+        }
+        .num{
+          padding-left: 5px;
+        }
+      }
+      .second{
+        width: 260px;
+        margin-left: -75px;
+        p{
+          width: 180px;
+        }
+      }
+      .third{
+        width: 300px;
+        margin-left: -80px;
+        p{
+          width: 220px;
+        }
+      }
+      .video{
+        width: 220px;
+        height: 220px;
+        background: url("../../assets/images/video.png") $center $center no-repeat;
+        display: flex;
+        justify-content: $center;
+        align-items: $center;
+        margin: 0 5px 8px 0;
+        .arrow{
+          margin: 5px 0 0 5px;
+        }
+        &:hover{
+          filter: drop-shadow(3px 5px 5px #000);
+        }
+        &:hover>.arrow{
+          transform: scale(1.3);
+        }
+        &:active{
+          filter: none;
+        }
+        &:active>.arrow{
+          transform: scale(.8);
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width:1290px) {
+  .container_hero{
+    article{
+      grid-template-rows: 1fr 1fr;
+      .proposal_button{
+        button{
+          .proposal_btn_img{
+            display: none;
+          }
+          .proposal_btn_text{
+            top: 50%;
+            right: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: inline-block;
+          }
+        }
+      }
+      .qualities{
+        align-items: $center;
+        .first,.second,.third{
+          text-align: $center;
+        }
+        .first{
+          width: auto;
+          p{
+            width: auto;
+            padding-left: 0;
+          }
+          .num{
+            padding-left: 0;
+          }
+        }
+        .second{
+          width: auto;
+          margin-left: 0;
+          p{
+            width: auto;
+          }
+        }
+        .third{
+          width: auto;
+          margin-left: 0;
+          p{
+            width: auto;
+          }
+        }
+        .video{
+          width: 120px;
+          height: 120px;
+          background-size: contain;
+          margin: 0;
+        }
+      }
+
+    }
+  }
+}
+
+@media all and(max-width:1000px) {
+  .container_hero{
+    grid-template-rows: 100px;
+    header{
+      .logo{
+        left: 15%;
+      }
+      .email{
+        right: 30%;
+      }
+    }
+    article{
+      grid-template-rows: 1fr 1.5fr;
+      .qualities{
+        align-items: $center;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-around;
+        .first,.second,.third{
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width:800px) {
+  .container_hero{
+    height: auto;
+    header{
+      .logo{
+        left: unset;
+        right: 0;
+      }
+      .email,.number{
+        display: none;
+      }
+    }
+    article{
+      display: flex;
+      flex-direction: column;
+      .proposal_header{
+        height: auto;
+      }
+      .proposal_button{
+        button{
+          width: 80%;
+          margin: auto;
+        }
+      }
+      .qualities{
+        .first{
+          margin-top: 10px;
+        }
+        .first,.second,.third,.video{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width:500px) {
+  .container_hero{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: $center;
+    header{
+      width: 90%;
+    }
+    article{
+      align-items: $center;
+      .proposal_header,.proposal_button,.qualities{
+        width: 90%;
+      }
+      .qualities{
+        .first,.second,.third{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+

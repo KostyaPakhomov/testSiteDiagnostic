@@ -1,0 +1,21 @@
+<section class="container_services">
+  <h2>УСЛУГИ</h2>
+  <div class="main_text">
+    Выполняем как комплексное обследование, так и отдельные виды работ
+  </div>
+  <div id="slider">
+    <div class="slider_element" *ngFor="let type of typesOfWork">
+      <img [src]="type.imageLink" alt="">
+      <h3>{{type.header}}</h3>
+      <p>{{type.text}}</p>
+      <a [href]="type.aboutLink">ПОДРОБНЕЕ<span>
+        <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.5 5.5H20.5M20.5 5.5L16.5 1.5M20.5 5.5L16.5 9.5" stroke="#FEE040" stroke-width="2"/>
+        </svg>
+      </span></a>
+    </div>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+</section>

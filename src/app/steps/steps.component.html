@@ -1,0 +1,50 @@
+<section class="container_steps">
+  <header>Мы работаем в комплексе</header>
+  <p>
+    чтобы Вы не тратили время на поиск и организацию <br>
+    множества подрядчиков
+  </p>
+  <div class="step1">
+    <div class="step1_img" #stepImage>
+      <ng-container  class="step_img" *ngFor="let img of step1Images">
+          <img  [src]="img.urlImg" alt="" *ngIf="img.isActive == true">
+      </ng-container>
+      <div class="area">
+        <div class="left_area" (click)="changeSlideLeft()"></div>
+        <div class="right_area" (click)="changeSlideRight()"></div>
+      </div>
+      <div class="rect_container">
+        <div class="rect" id="rect1"></div>
+        <div class="rect" id="rect2"></div>
+        <div class="rect" id="rect3"></div>
+        <div class="rect" id="rect4"></div>
+      </div>
+
+    </div>
+    <div class="about_step1">
+      <header>
+        <div class="step">шаг №1.</div>
+        <h2>Подготовительные работы</h2>
+      </header>
+      <p>
+        Мы осматриваем здание, делаем замеры и проверяем <br>
+        наличие визуально заметных дефектов: трещин, <br>
+        коррозии, повреждения фундамента и т.д.
+      </p>
+      <div class="quote">
+        <div class="quote_ellipse">
+          <div class="quote_img"></div>
+        </div>
+        <blockquote>
+          “Задача этого этапа получить максимально полное <br>
+          представление о конструкции здания, условиях его <br>
+          эксплуатации и возможных слабых местах“
+        </blockquote>
+        <p>
+          АЛЕКСЕЙ, обследователь и главный инженер проектов
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
